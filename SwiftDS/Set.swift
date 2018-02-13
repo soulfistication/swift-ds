@@ -19,20 +19,23 @@ struct Set<T>: ISet {
 
     init(_ size: Int) {
         data = [T]()
-
+        data.reserveCapacity(size)
+        for i in 0..<size {
+            print(i)
+        }
     }
 
     // ISet
 
-    func add(element: AnyObject) {
+    func add(element: Any) {
 
     }
 
-    func delete(element: AnyObject) {
+    func delete(element: Any) {
 
     }
 
-    func contains(element: AnyObject) -> Bool {
+    func contains(element: Any) -> Bool {
         return true
     }
 

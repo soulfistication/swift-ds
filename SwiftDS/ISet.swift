@@ -7,9 +7,9 @@
 //
 
 protocol ISet {
-    func add(element: AnyObject)
-    func delete(element: AnyObject)
-    func contains(element: AnyObject) -> Bool
+    func add(element: Any)
+    func delete(element: Any)
+    func contains(element: Any) -> Bool
     func isEmpty() -> Bool
     func size() -> Int
     func empty()
