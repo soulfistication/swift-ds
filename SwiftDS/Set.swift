@@ -8,16 +8,23 @@
 
 struct SetIteratorImpl: IteratorProtocol {
 
+    typealias Element = Any
+
     private let set: SetProtocol
 
-    var count = 0
+    var count: Int
 
     init(_ set: SetProtocol) {
         self.set = set
+        count = 0
     }
 
     mutating func next() -> SetIteratorImpl.Element? {
         guard count > 0 && count < set.count  else { return nil }
+
+        defer {
+            count += 1
+        }
 
         return nil
     }
@@ -51,7 +58,7 @@ struct Set: Sequence, SetProtocol {
         data.reserveCapacity(set.count)
 
         for element in set {
-            data[i] = element
+            print(element)
         }
 
     }
