@@ -6,26 +6,62 @@
 //  Copyright © 2018 Ivan. All rights reserved.
 //
 
-import Foundation
+struct SetIteratorImpl: IteratorProtocol {
 
-struct Set<T>: ISet {
-    private var data:[T]
+    private let set: SetProtocol
 
-    // Init
+    var count = 0
+
+    init(_ set: SetProtocol) {
+        self.set = set
+    }
+
+    mutating func next() -> SetIteratorImpl.Element? {
+        guard count > 0 && count < set.count  else { return nil }
+
+        return nil
+    }
+
+}
+
+struct Set: Sequence, SetProtocol {
+
+    public var data:[Element?]
+
+    var count: Int {
+        return data.count
+    }
+
+    // MARK: - Initializers
 
     init() {
-        self = Set<T>(20)
+        self = Set(20)
     }
 
     init(_ size: Int) {
-        data = [T]()
-        data.reserveCapacity(size)
-        for i in 0..<size {
-            print(i)
+        data = []
+        data.reserveCapacity(count)
+        for i in 0..<count {
+            data[i] = nil
         }
     }
 
-    // ISet
+    init(_ set: Set) {
+        data = []
+        data.reserveCapacity(set.count)
+
+        for element in set {
+            data[i] = element
+        }
+
+    }
+
+    // MARK: - Iterator
+    func makeIterator() -> SetIteratorImpl {
+        return SetIteratorImpl(self)
+    }
+
+    // MARK: - ISet
 
     func add(element: Any) {
 
@@ -51,19 +87,20 @@ struct Set<T>: ISet {
 
     }
 
-    func union(_ c:ISet) -> ISet {
+    func union(_ c:SetProtocol) -> SetProtocol {
         return self
     }
 
-    func intersection(_ c:ISet) -> ISet {
+    func intersection(_ c:SetProtocol) -> SetProtocol {
         return self
     }
 
-    func difference(_ c:ISet) -> ISet {
+    func difference(_ c:SetProtocol) -> SetProtocol {
         return self
     }
 
-    func isSubSet(_ c: ISet) -> Bool {
+    func isSubSet(_ c: SetProtocol) -> Bool {
         return true
     }
+
 }

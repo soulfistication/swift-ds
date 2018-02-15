@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24FD0B252035B7F400D56EA7 /* SetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FD0B242035B7F400D56EA7 /* SetProtocol.swift */; };
 		526A1BDB20339CED0062E3C3 /* SwiftDS.h in Headers */ = {isa = PBXBuildFile; fileRef = 526A1BD920339CED0062E3C3 /* SwiftDS.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		526A1BE220339D320062E3C3 /* ISet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A1BE120339D320062E3C3 /* ISet.swift */; };
 		526A1BE420339EA60062E3C3 /* Set.swift in Sources */ = {isa = PBXBuildFile; fileRef = 526A1BE320339EA60062E3C3 /* Set.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24FD0B242035B7F400D56EA7 /* SetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProtocol.swift; sourceTree = "<group>"; };
 		526A1BD620339CED0062E3C3 /* SwiftDS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftDS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		526A1BD920339CED0062E3C3 /* SwiftDS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftDS.h; sourceTree = "<group>"; };
 		526A1BDA20339CED0062E3C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		526A1BE120339D320062E3C3 /* ISet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ISet.swift; sourceTree = "<group>"; };
 		526A1BE320339EA60062E3C3 /* Set.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Set.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -52,8 +52,8 @@
 			children = (
 				526A1BD920339CED0062E3C3 /* SwiftDS.h */,
 				526A1BDA20339CED0062E3C3 /* Info.plist */,
-				526A1BE120339D320062E3C3 /* ISet.swift */,
 				526A1BE320339EA60062E3C3 /* Set.swift */,
+				24FD0B242035B7F400D56EA7 /* SetProtocol.swift */,
 			);
 			path = SwiftDS;
 			sourceTree = "<group>";
@@ -138,8 +138,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24FD0B252035B7F400D56EA7 /* SetProtocol.swift in Sources */,
 				526A1BE420339EA60062E3C3 /* Set.swift in Sources */,
-				526A1BE220339D320062E3C3 /* ISet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +305,7 @@
 				526A1BE020339CED0062E3C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
